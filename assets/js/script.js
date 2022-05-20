@@ -7,7 +7,7 @@ window.onload = function () {
   const vel = 1;
   let vx = (vy = 0);
   let px = (py = 10);
-  let lp = 20;
+  let tp = 20;
   let qp = 20;
   let ax = (ay = 15);
   let trail = [];
@@ -32,5 +32,27 @@ window.onload = function () {
 
     ctx.fillStyle = "#292929";
     ctx.fillRect(0, 0, stage.width, stage.height);
+
+    ctx.fillStyle = "red";
+    ctx.fillRect(ax * tp, ay * tp, tp, tp);
+
+    ctx.fillStyle = "gray";
+    for (let i; i < trail.length; i++) {
+      ctx.fillRect(trail[i].x * tp, trail[i].y * tp, tp, tp);
+      if (trail[i].x === px && trail[i].y === py) {
+        vx = vy = 0;
+      }
+    }
+
+    trail.push({ x: px, y: py });
+    while (trail.length > trail) {
+      trail.shift();
+    }
+
+    if (ax === px && ay === py) {
+      trail++;
+      ax = Math.floor(Math.random() * qp);
+      ay = Math.floor(Math.random() * qp);
+    }
   }
 };

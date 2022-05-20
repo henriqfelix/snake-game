@@ -2,6 +2,19 @@ window.onload = function () {
   let stage = document.querySelector("#stage");
   let ctx = stage.getContext("2d");
 
-  ctx.fillStyle = "#292929";
-  ctx.fillRect(0, 0, stage.width, stage.height);
+  setInterval(game, 60);
+
+  const vel = 1;
+  let vx = (vy = 0);
+  let px = (py = 10);
+  let lp = 20;
+  let qp = 20;
+  let ax = (ay = 15);
+  let trail = [];
+  trail = 5;
+
+  function game() {
+    ctx.fillStyle = "#292929";
+    ctx.fillRect(0, 0, stage.width, stage.height);
+  }
 };

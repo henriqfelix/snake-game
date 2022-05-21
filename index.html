@@ -5,9 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Snake Game</title>
+
+    <link rel="stylesheet" href="assets/css/style.css" />
   </head>
   <body>
-    <canvas id="stage" width="600" height="600"></canvas>
+    <div id="container">
+      <div id="left">
+        <h1>SNAKE</h1>
+      </div>
+
+      <canvas id="stage" width="600" height="600"></canvas>
+
+      <div id="right">
+        <div id="score">
+          <h2>curent score</h2>
+          <div id="score-data">0</div>
+        </div>
+
+        <div id="best">
+          <h2>best score</h2>
+          <div id="best-data">0</div>
+        </div>
+      </div>
+    </div>
 
     <script src="assets/js/script.js"></script>
   </body>

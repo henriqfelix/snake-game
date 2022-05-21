@@ -3,6 +3,7 @@ window.onload = function () {
   let ctx = stage.getContext("2d");
   document.addEventListener("keydown", keyPush);
 
+  let lastKey = 0;
   let v = 120;
   let interval = setInterval(game, v);
 
@@ -57,8 +58,7 @@ window.onload = function () {
 
     if (ax == px && ay == py) {
       tail++;
-      if (v > 70) {
-        console.log(v);
+      if (v > 56) {
         clearInterval(interval);
         v -= 2;
         interval = setInterval(game, v);
@@ -77,23 +77,36 @@ window.onload = function () {
   }
 
   function keyPush(e) {
-    switch (e.keyCode) {
-      case 37: //left
-        vx = -vel;
-        vy = 0;
-        break;
-      case 38: //up
-        vx = 0;
-        vy = -vel;
-        break;
-      case 39: //right
-        vx = vel;
-        vy = 0;
-        break;
-      case 40: //down
-        vx = 0;
-        vy = vel;
-        break;
+    // keys: 37 = left | 38 = up | 39 = right | 40 = down
+
+    if (e.keyCode === 37 && lastKey !== 39) {
+      console.log(lastKey);
+      console.log(e.keyCode);
+      vx = -vel;
+      vy = 0;
+      lastKey = 37;
+      return;
+    }
+
+    if (e.keyCode === 38 && lastKey !== 40) {
+      vx = 0;
+      vy = -vel;
+      lastKey = 38;
+      return;
+    }
+
+    if (e.keyCode === 39 && lastKey !== 37) {
+      vx = vel;
+      vy = 0;
+      lastKey = 39;
+      return;
+    }
+
+    if (e.keyCode === 40 && lastKey !== 38) {
+      vx = 0;
+      vy = vel;
+      lastKey = 40;
+      return;
     }
   }
 };

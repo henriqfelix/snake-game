@@ -3,7 +3,8 @@ window.onload = function () {
   let ctx = stage.getContext("2d");
   document.addEventListener("keydown", keyPush);
 
-  setInterval(game, 60);
+  let v = 120;
+  let interval = setInterval(game, v);
 
   const vel = 1;
 
@@ -11,7 +12,7 @@ window.onload = function () {
   let px = 10;
   let py = 15;
   let tp = 20;
-  let qp = 20;
+  let qp = 30;
   let ax = (ay = 15);
 
   let trail = [];
@@ -40,12 +41,12 @@ window.onload = function () {
     ctx.fillStyle = "red";
     ctx.fillRect(ax * tp, ay * tp, tp, tp);
 
-    ctx.fillStyle = "gray";
+    ctx.fillStyle = "#CCCCCC";
     for (let i = 0; i < trail.length; i++) {
-      ctx.fillRect(trail[i].x * tp, trail[i].y * tp, tp, tp);
+      ctx.fillRect(trail[i].x * tp, trail[i].y * tp, tp - 1, tp - 1);
+      // - - - GAME OVER - - -
       if (trail[i].x == px && trail[i].y == py) {
-        vx = vy = 0;
-        tail = 5;
+        gameover();
       }
     }
 
@@ -56,9 +57,23 @@ window.onload = function () {
 
     if (ax == px && ay == py) {
       tail++;
+      if (v > 70) {
+        console.log(v);
+        clearInterval(interval);
+        v -= 2;
+        interval = setInterval(game, v);
+      }
       ax = Math.floor(Math.random() * qp);
       ay = Math.floor(Math.random() * qp);
     }
+  }
+
+  function gameover() {
+    clearInterval(interval);
+    v = 120;
+    interval = setInterval(game, v);
+    vx = vy = 0;
+    tail = 5;
   }
 
   function keyPush(e) {

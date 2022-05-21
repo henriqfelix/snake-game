@@ -39,7 +39,7 @@ window.onload = function () {
     ctx.fillStyle = "#292929";
     ctx.fillRect(0, 0, stage.width, stage.height);
 
-    ctx.fillStyle = "red";
+    ctx.fillStyle = "#b91528";
     ctx.fillRect(ax * tp, ay * tp, tp, tp);
 
     ctx.fillStyle = "#CCCCCC";

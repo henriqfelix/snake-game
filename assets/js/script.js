@@ -83,6 +83,7 @@ window.onload = function () {
     vx = vy = 0;
     tail = 5;
     score = 0;
+    lastKey = 0;
   }
 
   function personalBest() {

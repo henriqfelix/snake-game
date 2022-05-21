@@ -80,19 +80,19 @@
 }
 
 h1 span:nth-child(1) {
-  animation: textAnimation 10s infinite 0s;
+  animation: textAnimation 20s infinite 0s;
 }
 h1 span:nth-child(2) {
-  animation: textAnimation 10s infinite 2s;
+  animation: textAnimation 20s infinite 4s;
 }
 h1 span:nth-child(3) {
-  animation: textAnimation 10s infinite 4s;
+  animation: textAnimation 20s infinite 8s;
 }
 h1 span:nth-child(4) {
-  animation: textAnimation 10s infinite 6s;
+  animation: textAnimation 20s infinite 12s;
 }
 h1 span:nth-child(5) {
-  animation: textAnimation 10s infinite 8s;
+  animation: textAnimation 20s infinite 16s;
 }
 
 @keyframes textAnimation {

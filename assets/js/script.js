@@ -1,6 +1,11 @@
 window.onload = function () {
   let stage = document.querySelector("#stage");
   let ctx = stage.getContext("2d");
+  let scoreData = document.querySelector("#score-data");
+  let score = Number(scoreData.innerHTML);
+  let bestData = document.querySelector("#best-data");
+  let best = Number(bestData.innerHTML);
+
   document.addEventListener("keydown", keyPush);
 
   let lastKey = 0;
@@ -62,6 +67,8 @@ window.onload = function () {
         clearInterval(interval);
         v -= 2;
         interval = setInterval(game, v);
+        score++;
+        scoreData.innerHTML = score;
       }
       ax = Math.floor(Math.random() * qp);
       ay = Math.floor(Math.random() * qp);
@@ -69,19 +76,28 @@ window.onload = function () {
   }
 
   function gameover() {
+    personalBest();
     clearInterval(interval);
     v = 120;
     interval = setInterval(game, v);
     vx = vy = 0;
     tail = 5;
+    score = 0;
+  }
+
+  function personalBest() {
+    if (score > best) {
+      bestData.innerHTML = score;
+    }
+    return;
   }
 
   function keyPush(e) {
     // keys: 37 = left | 38 = up | 39 = right | 40 = down
 
+    if (v === 120) scoreData.innerHTML = "0";
+
     if (e.keyCode === 37 && lastKey !== 39) {
-      console.log(lastKey);
-      console.log(e.keyCode);
       vx = -vel;
       vy = 0;
       lastKey = 37;

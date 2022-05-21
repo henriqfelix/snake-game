@@ -65,6 +65,9 @@
   color: #222222;
   font-weight: bold;
 }
+#right #best #best-data {
+  color: #b91528;
+}
 
 #container #left h1 {
   writing-mode: vertical-rl;
@@ -74,4 +77,35 @@
 
 #stage {
   border-radius: 1rem;
+}
+
+h1 span:nth-child(1) {
+  animation: textAnimation 10s infinite 0s;
+}
+h1 span:nth-child(2) {
+  animation: textAnimation 10s infinite 2s;
+}
+h1 span:nth-child(3) {
+  animation: textAnimation 10s infinite 4s;
+}
+h1 span:nth-child(4) {
+  animation: textAnimation 10s infinite 6s;
+}
+h1 span:nth-child(5) {
+  animation: textAnimation 10s infinite 8s;
+}
+
+@keyframes textAnimation {
+  0% {
+    color: #b91528;
+  }
+  19% {
+    color: #b91528;
+  }
+  20% {
+    color: #eeeeee;
+  }
+  100% {
+    color: #eeeeee;
+  }
 }

@@ -29,6 +29,7 @@ The additional features are listed on next topic.
 
 - Progressively increased difficulty
 - The snake cannot rotate at an angle of 180 degrees
+- Local Storage to save personal best
 - Style CSS 100% original
 
 ---
@@ -37,6 +38,7 @@ The additional features are listed on next topic.
 
 - HTML
   - Canvas
+  - Local Storage
 - CSS
   - Keyframes
 - Javascript

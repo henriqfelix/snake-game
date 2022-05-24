@@ -11,6 +11,7 @@ window.onload = function () {
   let lastKey = 0;
   let v = 120;
   let interval = setInterval(game, v);
+  let bestAux = 0;
 
   const vel = 1;
 
@@ -87,8 +88,9 @@ window.onload = function () {
   }
 
   function personalBest() {
-    if (score > best) {
-      bestData.innerHTML = score;
+    if (score > bestAux) {
+      bestAux = score;
+      bestData.innerHTML = bestAux;
     }
     return;
   }

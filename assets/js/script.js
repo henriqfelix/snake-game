@@ -67,9 +67,9 @@ window.onload = function () {
         clearInterval(interval);
         v -= 2;
         interval = setInterval(game, v);
-        score++;
-        scoreData.innerHTML = score;
       }
+      score++;
+      scoreData.innerHTML = score;
       ax = Math.floor(Math.random() * qp);
       ay = Math.floor(Math.random() * qp);
     }

@@ -4,7 +4,6 @@ window.onload = function () {
   let scoreData = document.querySelector("#score-data");
   let score = Number(scoreData.innerHTML);
   let bestData = document.querySelector("#best-data");
-  let best = Number(bestData.innerHTML);
 
   document.addEventListener("keydown", keyPush);
 

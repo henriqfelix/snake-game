@@ -11,7 +11,8 @@ window.onload = function () {
   let lastKey = 0;
   let v = 120;
   let interval = setInterval(game, v);
-  let bestAux = 0;
+  let bestAux = localStorage.getItem("personalBest");
+  bestData.innerHTML = bestAux;
 
   const vel = 1;
 
@@ -91,6 +92,7 @@ window.onload = function () {
     if (score > bestAux) {
       bestAux = score;
       bestData.innerHTML = bestAux;
+      localStorage.setItem("personalBest", bestAux);
     }
     return;
   }

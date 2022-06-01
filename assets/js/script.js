@@ -7,7 +7,7 @@ window.onload = function () {
 
   document.addEventListener("keydown", keyPush);
 
-  let lastKey = 0;
+  let lastKey = "";
   let v = 120;
   let interval = setInterval(game, v);
   let bestAux = localStorage.getItem("personalBest");
@@ -98,35 +98,29 @@ window.onload = function () {
 
   function keyPush(e) {
     // keys: 37 = left | 38 = up | 39 = right | 40 = down
+    // keys: 65 = left | 87 = up | 68 = right | 83 = down
 
     if (v === 120) scoreData.innerHTML = "0";
 
-    if (e.keyCode === 37 && lastKey !== 39) {
+    if ((e.keyCode === 37 || e.keyCode === 65) && lastKey !== "right") {
       vx = -vel;
       vy = 0;
-      lastKey = 37;
-      return;
+      lastKey = "left";
     }
-
-    if (e.keyCode === 38 && lastKey !== 40) {
+    if ((e.keyCode === 38 || e.keyCode === 87) && lastKey !== "down") {
       vx = 0;
       vy = -vel;
-      lastKey = 38;
-      return;
+      lastKey = "up";
     }
-
-    if (e.keyCode === 39 && lastKey !== 37) {
+    if ((e.keyCode === 39 || e.keyCode === 68) && lastKey !== "left") {
       vx = vel;
       vy = 0;
-      lastKey = 39;
-      return;
+      lastKey = "right";
     }
-
-    if (e.keyCode === 40 && lastKey !== 38) {
+    if ((e.keyCode === 40 || e.keyCode === 83) && lastKey !== "up") {
       vx = 0;
       vy = vel;
-      lastKey = 40;
-      return;
+      lastKey = "down";
     }
   }
 };

@@ -31,6 +31,7 @@ The additional features are listed on next topic.
 - The snake cannot rotate at an angle of 180 degrees
 - Local Storage to save personal best
 - Style CSS 100% original
+- WASD control
 
 ---
 

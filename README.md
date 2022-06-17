@@ -1,20 +1,26 @@
 # snake-game
 
-## Preview Game
+## Preview game
 
 ![screen](assets/to_readme/screen.png)
 
 ---
 
-## Preview Game Running
+## Preview game running
 
 ![screen-running](assets/to_readme/screen-running.png)
 
 ---
 
-## Preview Gameplay
+## Preview gameplay
 
 ![gameplay](assets/to_readme/snake.gif)
+
+---
+
+> ### 🕹️ Try it youtself
+
+[>>>> CLICK HERE <<<<](https://henriqfelix.github.io/snake-game/) to play this game!
 
 ---
 
@@ -25,7 +31,7 @@ The additional features are listed on next topic.
 
 ---
 
-> ### ➕ Bonus-Features
+> ### ➕ Bonus features
 
 - Progressively increased difficulty
 - The snake cannot rotate at an angle of 180 degrees
@@ -35,7 +41,7 @@ The additional features are listed on next topic.
 
 ---
 
-> ### 💻 Technologies Used
+> ### 💻 Technologies used
 
 - HTML
   - Canvas

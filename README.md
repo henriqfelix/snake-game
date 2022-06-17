@@ -20,7 +20,7 @@
 
 > ### 🕹️ Try it youtself
 
-[>>>> CLICK HERE <<<<](https://henriqfelix.github.io/snake-game/) to play this game!
+[>>>> CLICK HERE <<<<](https://henriqfelix.github.io/snake-game/) to play this game! ❗Not compatible on mobile devices❗
 
 ---
 
